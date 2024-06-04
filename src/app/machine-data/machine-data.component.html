@@ -1,0 +1,121 @@
+<div
+  style="
+    background-color: white;
+    width: 100%;
+    height: 283px;
+    border-radius: 12px;
+    padding: 8px;
+  "
+>
+  <ui5-toolbar style="width: 100%; height: 44px">
+    <ui5-toolbar-button
+      icon="add"
+      text="Add"
+      design="Emphasized"
+      (click)="openDialog()"
+    ></ui5-toolbar-button>
+    <ui5-toolbar-button
+      icon="delete"
+      text="delete"
+      (click)="(onDelete)"
+    ></ui5-toolbar-button>
+  </ui5-toolbar>
+
+  <div
+    style="height: 224px; width: 100%; overflow-x: hidden; overflow-y: hidden"
+  >
+    <ui5-table
+      mode="MultiSelect"
+      sticky-column-header
+      id="myTable"
+      class="table-border"
+    >
+      <ui5-table-column
+        style="width: 161px; height: 32px"
+        slot="columns"
+        (click)="sortData('id')"
+        >ID</ui5-table-column
+      >
+      <ui5-table-column slot="columns" style="width: 161px; height: 32px"
+        >Custom_ID
+      </ui5-table-column>
+      <ui5-table-column slot="columns" style="width: 161px; height: 32px"
+        >Active
+      </ui5-table-column>
+      <ui5-table-column slot="columns" style="width: 161px; height: 32px"
+        >Name
+      </ui5-table-column>
+      <ui5-table-column slot="columns" style="width: 161px; height: 32px"
+        >Hall
+      </ui5-table-column>
+      <ui5-table-column slot="columns" style="width: 161px; height: 32px"
+        >Lead Time
+      </ui5-table-column>
+      <ui5-table-column slot="columns" style="width: 161px; height: 32px"
+        >TR
+      </ui5-table-column>
+      <ui5-table-column slot="columns" style="width: 161px; height: 32px"
+        >Furnace
+      </ui5-table-column>
+      <ui5-table-column slot="columns" style="width: 161px; height: 32px"
+        >Machine State Type
+      </ui5-table-column>
+      <ui5-table-column slot="columns" style="width: 161px; height: 32px"
+        >Operation Pool
+      </ui5-table-column>
+      <ui5-table-column slot="columns" style="width: 161px; height: 32px"
+        >ERP
+      </ui5-table-column>
+      <ui5-table-column slot="columns" style="width: 32px; height: 32px"
+        >Action</ui5-table-column
+      >
+
+      <ui5-table-row *ngFor="let Items of data" type="Active">
+        <ui5-table-cell style="width: 161px; height: 32px">{{
+          Items.id
+        }}</ui5-table-cell>
+        <ui5-table-cell style="width: 161px; height: 32px">{{
+          Items.custom_id
+        }}</ui5-table-cell>
+        <ui5-table-cell style="width: 161px; height: 32px">{{
+          Items.is_active
+        }}</ui5-table-cell>
+        <ui5-table-cell style="width: 161px; height: 32px">{{
+          Items.name
+        }}</ui5-table-cell>
+        <ui5-table-cell style="width: 161px; height: 32px">{{
+          Items.hall_id
+        }}</ui5-table-cell>
+        <ui5-table-cell style="width: 161px; height: 32px">{{
+          Items.lead_time_days
+        }}</ui5-table-cell>
+        <ui5-table-cell style="width: 161px; height: 32px">{{
+          Items.tr
+        }}</ui5-table-cell>
+        <ui5-table-cell style="width: 161px; height: 32px">{{
+          Items.is_furnace
+        }}</ui5-table-cell>
+        <ui5-table-cell style="width: 161px; height: 32px">{{
+          Items.machine_state_type
+        }}</ui5-table-cell>
+        <ui5-table-cell style="width: 161px; height: 32px">{{
+          Items.has_operation_pool
+        }}</ui5-table-cell>
+        <ui5-table-cell style="width: 161px; height: 32px">{{
+          Items.is_imported_from_erp
+        }}</ui5-table-cell>
+        <ui5-table-cell style="width: 32px; height: 32px">
+          <!-- <ui5-button [design]="'Positive'" (click)="editOpenDialog(Items)"
+            >Edit</ui5-button
+          > -->
+          <ui5-icon name="delete" (click)="onDelete(Items.id)"></ui5-icon>
+          <!-- <ui5-button [design]="'Negative'" (click)="onDelete(Items.id)"
+            >Delete</ui5-button
+          > -->
+        </ui5-table-cell>
+      </ui5-table-row>
+    </ui5-table>
+  </div>
+</div>
+
+<app-form-open [isDialogOpen]="isDialogOpen" (close)="ll()"></app-form-open>

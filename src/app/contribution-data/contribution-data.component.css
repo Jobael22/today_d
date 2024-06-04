@@ -1,0 +1,16 @@
+.col_1{grid-area: first;}
+.col_2{grid-area: second;}
+.col_3{grid-area: third;}
+.col_4{grid-area: forth;}
+
+.sec-1{
+    background-color: white;
+    display: grid;
+    width: 100%;
+    height: 124px;
+    border-radius: 12px;
+    gap: 8px;
+    padding: 16px;
+    grid-template-areas: 
+    'first second third forth';
+}

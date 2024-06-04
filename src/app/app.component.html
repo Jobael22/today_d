@@ -1,0 +1,113 @@
+<div class="page">
+  <div class="shellbar">
+    <ui5-shellbar
+      id="shellbar"
+      primary-title="Create Salesman Profile Application"
+      notifications-count="99+"
+      show-notifications=""
+    >
+      <ui5-avatar slot="profile">
+        <img
+          src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_5.png"
+        />
+      </ui5-avatar>
+      <img
+        slot="logo"
+        src="https://sap.github.io/ui5-webcomponents/images/sap-logo-svg.svg"
+      />
+      <ui5-button icon="nav-back" slot="startButton"></ui5-button>
+
+      <ui5-input
+        id="searchField"
+        slot="searchField"
+        placeholder="search everything"
+      ></ui5-input>
+      <ui5-li slot="menuItems">Application 1</ui5-li>
+      <ui5-li slot="menuItems">Application 2</ui5-li>
+      <ui5-li slot="menuItems">Application 3</ui5-li>
+      <ui5-li slot="menuItems">Application 4</ui5-li>
+      <ui5-li slot="menuItems">Application 5</ui5-li>
+    </ui5-shellbar>
+  </div>
+
+  <div class="object_header">
+    <div class="header">
+      <div class="toolbar">
+        <div class="title" style="background-color: white; width: 100%; height: 256px; padding: 24px 48px 16px 48px;">
+          <ui5-title level="H2">Create Salesman Profile</ui5-title>
+          <div class="frame">
+            <ui5-label for="myInput">Supplier Code:</ui5-label>
+            <ui5-input id="valueHelpInput" placeholder="Enter product">
+              <ui5-icon
+                id="valueHelpIcon"
+                slot="icon"
+                name="value-help"
+              ></ui5-icon>
+            </ui5-input>
+          </div>
+        </div>
+      </div>
+      <div class="icon_toolbar">
+        <ui5-tabcontainer>
+          <ui5-tab
+            text="Master Data"
+          ></ui5-tab>
+          <ui5-tab text="Contribution Data"></ui5-tab>
+          <ui5-tab
+            text="Machine data"
+          ></ui5-tab>
+          <ui5-tab text="Additional Data"></ui5-tab>
+          <ui5-tab text="Notes"></ui5-tab>
+          <ui5-tab text="Attachment"></ui5-tab>
+        </ui5-tabcontainer>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="width: auto; height: 1559px; overflow-y: visible; overflow-x: hidden; padding: 16px 32px 16px 32px; gap: 8px; display: grid;">
+    <div style="width: 100%; height: 288px; border-radius: 12px; padding: 8px 16px 8px 16px; gap: 8px;">
+      <app-master-data></app-master-data>
+    </div>
+    <div style="width: 100%; height: 160px;">
+      <ui5-title level="H4" style="width: 100%; height: 36px;  padding: 0 16px 0 32px; margin-top: 16px;">Contribution Data</ui5-title>
+      <div style="width: 100%; height: 124px; border-radius: 12px; padding-left: 16px; gap: 8px; ">
+        <app-contribution-data></app-contribution-data>
+      </div>
+    </div>
+    <div style="width: 100%; height: 327px; ">
+      <ui5-title level="H4" style="width: 100%; height: 44px; padding: 48px 16px 3px 32px;">Machine Data</ui5-title>
+      <div style="padding-left: 16px;">
+        <app-machine-data></app-machine-data>
+      </div>
+    </div>
+    <div style="width: 100%;">
+      <div style="padding-left: 16px;">
+        <app-additional-data></app-additional-data>
+      </div>
+    </div>
+    <div>
+      <ui5-title level="H4" style="width: 100%; height: 44px; padding: 0px 16px 0px 32px;">Notes</ui5-title>
+      <div style="padding-left: 16px;">
+        <app-notes></app-notes>
+      </div>
+    </div>
+    <div>
+      <app-attachment></app-attachment>
+    </div>
+
+  </div>
+
+
+  <div slot="footer" id="footer">
+    <ui5-bar>
+      <ui5-button design="Emphasized" slot="endContent"
+        >Save and Exit</ui5-button
+      >
+      <ui5-button slot="endContent" icon="slim-arrow-down"
+        >Save and Go To</ui5-button
+      >
+      <ui5-button design="Transparent" slot="endContent">Cancel</ui5-button>
+    </ui5-bar>
+  </div>
+</div>
